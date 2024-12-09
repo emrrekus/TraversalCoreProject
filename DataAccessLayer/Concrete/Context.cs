@@ -18,5 +18,15 @@ namespace DataAccessLayer.Concrete
         }
 
         public DbSet<Destination> Destinations { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Feature> Features { get; set; }
+        public DbSet <Guide> Guides { get; set; }
+        public DbSet<NewsLetter> NewsLetters { get; set; }
+        public DbSet<SecondaryAbout> SecondaryAbouts { get; set; }
+
+        public DbSet<SecondaryFeature> SecondaryFeatures { get; set; }
+        public DbSet<SubAbout> SubAbouts { get; set; }
+        public DbSet<Testimonials> Testimonials { get; set; }
     }
 }
