@@ -20,7 +20,10 @@ namespace BusinessLayer.Extensions
             services.AddScoped<IAboutDal, EfAboutDal>();
             services.AddScoped<IAboutService, AboutManager>();
 
-           
+            services.AddScoped<ICommentDal, EfCommentDal>();
+            services.AddScoped<ICommentService, CommentManager>();
+
+
             services.AddScoped<IContactDal, EfContactDal>();
             services.AddScoped<IContactService, ContactManager>();
 

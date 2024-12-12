@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,5 +29,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<SecondaryFeature> SecondaryFeatures { get; set; }
         public DbSet<SubAbout> SubAbouts { get; set; }
         public DbSet<Testimonials> Testimonials { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
     }
 }
