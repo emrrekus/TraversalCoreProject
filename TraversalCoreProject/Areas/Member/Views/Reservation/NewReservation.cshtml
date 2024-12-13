@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.Reservation
+
+@{
+    ViewData["Title"] = "NewReservation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Rezervasyon Sayfası</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">
+                        Web Sitemiz Traversal üzerinde yer alan lokasyonlar içinde yeni bir rezervasyonu aşağıdaki panelden yapabilirsiniz.
+                    </p>
+                    <form asp-action="NewReservation" method="post">
+                       
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.DestinationID, "Lokasyon")
+                            @Html.DropDownListFor(x => x.DestinationID, (List<SelectListItem>)ViewBag.v, "Seçiniz", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Destination, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.PersonCount, "Kişi Sayısı")
+                            @Html.TextBoxFor(x => x.PersonCount, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.PersonCount, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ReservastionDate, "Tarih")
+                            @Html.TextBoxFor(x => x.ReservastionDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                            @Html.ValidationMessageFor(x => x.ReservastionDate, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Description, "Varsa Eklemek İstedikleriniz")
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                        </div>
+                        <button type="submit" class="btn btn-outline-success">Rezervasyon Yap</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

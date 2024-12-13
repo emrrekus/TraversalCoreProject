@@ -31,5 +31,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Testimonials> Testimonials { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Reservation> Reservations { get; set; }
     }
 }

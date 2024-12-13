@@ -16,7 +16,9 @@ namespace BusinessLayer.Extensions
 
         public static IServiceCollection AddProjectDependencies(this IServiceCollection services)
         {
-           
+            services.AddScoped<IReservationDal, EfReservationDal>();
+            services.AddScoped<IReservationService, ReservationManager>();
+
             services.AddScoped<IAboutDal, EfAboutDal>();
             services.AddScoped<IAboutService, AboutManager>();
 

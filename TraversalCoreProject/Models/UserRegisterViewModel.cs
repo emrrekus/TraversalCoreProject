@@ -15,6 +15,10 @@ namespace TraversalCoreProject.Models
 
         [Required(ErrorMessage = "Lütfen mail adresini giriniz")]
         public string Mail { get; set; }
+        [Required(ErrorMessage = "Lütfen cinsiyetinizi seçiniz")]
+        public string Gender { get; set; }
+
+
 
         [Required(ErrorMessage = "Lütfen şifreyi giriniz")]
         public string Password { get; set; }

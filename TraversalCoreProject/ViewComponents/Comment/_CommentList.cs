@@ -20,5 +20,10 @@ namespace TraversalCoreProject.ViewComponents.Comment
         //    var values = commentManager.TGetListCommentWithDestinationAndUser(id);
         //    return View(values);
         //}
+
+        public IViewComponentResult Invoke()
+        {
+            return View();
+        }
     }
 }

@@ -31,7 +31,10 @@ namespace TraversalCoreProject.Controllers
                 Name = p.Name,
                 Surname = p.Surname,
                 Email = p.Mail,
-                UserName = p.Username
+                UserName = p.Username,
+                Gender = "Erkek",
+                ImageUrl=string.Empty,
+               
             };
             if (p.Password == p.ConfirmPassword)
             {
@@ -60,12 +63,13 @@ namespace TraversalCoreProject.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(UserSignInViewModel p)
         {
+
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(p.username, p.password, false, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Profile", new { area = "Member" });
+                    return RedirectToAction("Index", "Profile" , new {area="Member"});
                 }
                 else
                 {

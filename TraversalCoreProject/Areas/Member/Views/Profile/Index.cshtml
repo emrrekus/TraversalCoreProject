@@ -1,0 +1,64 @@
+﻿@model TraversalCoreProject.Areas.Member.Models.UserEditViewModel
+
+@{
+    ViewData["Title"] = "Profil Güncelleme";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Profil Güncelleme Sayfası</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">Profil ile ilgili bilgilerinizi bu sayfadan güncelleyebilirsiniz.</p>
+                    <form method="post" enctype="multipart/form-data">
+                        @Html.HiddenFor(model => model.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, "Adınız")
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Surname, "Soyadınız")
+                            @Html.TextBoxFor(model => model.Surname, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Mail, "Mail Adresiniz")
+                            @Html.TextBoxFor(model => model.Mail, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, "Şifreniz")
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ConfirmPassword, "Şifre Tekrar")
+                            @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber, "Telefon Numarası")
+                            @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Resim Seçin</label>
+                            @Html.TextBoxFor(model => model.Image, new { type = "file", @class = "form-control" })
+                        </div>
+                        <button type="submit" class="btn btn-primary">Bilgileri Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

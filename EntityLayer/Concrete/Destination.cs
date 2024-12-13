@@ -26,6 +26,9 @@ namespace EntityLayer.Concrete
         public DateTime Date { get; set; }
 
         public List<Comment> Comments { get; set; }
+        public List<Reservation> Reservations { get; set; }
+
+     
 
 
     }
