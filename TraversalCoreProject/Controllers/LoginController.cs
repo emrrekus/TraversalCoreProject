@@ -7,6 +7,7 @@ using TraversalCoreProject.Models;
 namespace TraversalCoreProject.Controllers
 {
     [AllowAnonymous]
+
     public class LoginController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
